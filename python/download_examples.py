@@ -10,7 +10,7 @@ FILES_TO_DOWNLOAD = {
 }
 
 
-def download_data():
+def download():
     """
     Downloads data listed in FILES_TO_DOWNLOAD if they aren't already downloaded.
     """
@@ -23,4 +23,4 @@ def download_data():
 
 
 if __name__ == "__main__":
-    download_data()
+    download()
