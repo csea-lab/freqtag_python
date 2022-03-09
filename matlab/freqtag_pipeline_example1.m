@@ -12,7 +12,7 @@
 
 clear
 close('all')
-load('exampledata_1.mat') 
+load('raw/exampledata_1.mat') 
 exampledata_1 = data_1; % Renaming the data to keep it a bit simpler
 %% 2-Plot the data, averaging the trials
 % -The first visualization serves as a sanity check by plotting the data as 
