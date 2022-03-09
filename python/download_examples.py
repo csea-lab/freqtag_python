@@ -10,9 +10,9 @@ FILES_TO_DOWNLOAD = {
 }
 
 
-def download():
+def download() -> None:
     """
-    Downloads data listed in FILES_TO_DOWNLOAD if they aren't already downloaded.
+    Download data specified in FILES_TO_DOWNLOAD if not already downloaded.
     """
     for from_url, to_path in FILES_TO_DOWNLOAD.items():
         to_path = Path(to_path)
