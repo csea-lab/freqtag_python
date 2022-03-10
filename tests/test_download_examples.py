@@ -1,7 +1,9 @@
 from pathlib import Path
 from python.download_examples import FILES_TO_DOWNLOAD, download
+import pytest
 
 
+@pytest.mark.skip(reason="Test is lengthy and right now we know this works.")
 def test_download():
     """
     Test that files are downloaded when they don't exist.
