@@ -1,6 +1,7 @@
 *.mat
 __pycache__
 .vscode
+.pytest_cache
 matlab
 raw
 processed
