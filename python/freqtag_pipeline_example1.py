@@ -6,6 +6,9 @@ ssVEP envelope at each tagging frequency.
 import numpy
 import scipy.io
 import download_examples
+from freqtag_FFT import FFT
+
+SAMPLE_RATE = 500
 
 
 def main():
@@ -18,7 +21,9 @@ def main():
     faxisall = numpy.arange(0, 250, 0.1667)
     faxis = faxisall[:196]
 
-    breakpoint()
+    # 4-Run a Discrete Fourier Transform on the data
+    mean_ssvep = numpy.mean(data_ssvep, 2)
+    amp, phase, freqs, fftcomp = FFT(mean_ssvep, SAMPLE_RATE)
 
 
 if __name__ == "__main__":
