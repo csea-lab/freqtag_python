@@ -1,5 +1,5 @@
-from python.freqtag_FFT import FFT
-from python.download_examples import download
+from freqtag.freqtag_FFT import FFT
+from freqtag.download_examples import download
 import pytest
 import scipy.io
 import numpy
