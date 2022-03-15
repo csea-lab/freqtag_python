@@ -26,7 +26,7 @@ def FFT(data: np.array, fsamp: float) -> List[np.array]:
     """
     num_points = data.shape[-1]
     midpoint = round(num_points / 2)
-    untrimmed_freqs = np.fft.fftfreq(num_points, d=1/fsamp)
+    untrimmed_freqs = np.fft.fftfreq(num_points, d=1 / fsamp)
 
     fftcomp = np.fft.fftn(data, axes=[-1])
     untrimmed_phase = np.angle(fftcomp)
