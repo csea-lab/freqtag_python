@@ -4,18 +4,25 @@ from typing import List
 
 def FFT(data: np.array, fsamp: float) -> List[np.array]:
     """
-    Apply the Discrete Fourier Transform on a 2-D array.
+    Applies the Discrete Fourier Transform on EEG data.
 
     Args:
-        data (np.array): Sensors by time points 2-D matrix
-        fsamp (float): Sampling rate in Hz.
+      data:
+        (m, n) array. Each row is the time series of a sensor.
+        There are m sensors and n time points.
+      fsamp:
+        Sampling rate in Hz.
 
     Returns:
-        np.array: Columns in the array are:
-            amp: amplitude spectrum (amp)
-            phase: phase spectrum
-            freqs: frequencies available in the spectrum
-            fftcomp: complex fourier components
+      A list containing 4 arrays in the following order:
+        (m, n/2) array:
+          Each row is the amplitude spectrum of a sensor.
+        (m, n/2) array:
+          Each row is the phase spectrum of a sensor.
+        (n/2) array:
+          Available frequencies in the data.
+        (m, n) array:
+          Each row is the complex Fourier components of a sensor.
     """
     num_points = data.shape[-1]
     midpoint = round(num_points / 2)
