@@ -24,6 +24,8 @@ def freqtag_FFT(data: np.array, fsamp: float) -> List[np.array]:
         (m, n) array:
           Each row is the complex Fourier components of a sensor.
     """
+    # TODO: Raise an error if invalid input is passed.
+
     num_points = data.shape[-1]
     midpoint = round(num_points / 2)
     untrimmed_freqs = np.fft.fftfreq(num_points, d=1 / fsamp)
