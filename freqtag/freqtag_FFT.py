@@ -34,7 +34,7 @@ def FFT(data: np.array, fsamp: float) -> List[np.array]:
     # Get amplitude, taking care of doubled DC or Nyquist frequencies.
     untrimmed_amp = np.abs(fftcomp)
     untrimmed_amp[:, 0] = untrimmed_amp[:, 0] / 2
-    if num_points % 2 == 0:
+    if num_points % 2 == 0:  # TODO: Confirm Nyquist frequency is processed correctly
         untrimmed_amp[:, midpoint] = untrimmed_amp[:, midpoint] / 2
     untrimmed_amp = untrimmed_amp / num_points
 
