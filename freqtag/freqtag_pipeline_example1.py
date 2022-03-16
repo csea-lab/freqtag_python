@@ -6,7 +6,9 @@ ssVEP envelope at each tagging frequency.
 import numpy as np
 import scipy.io
 import download_examples
-from freqtag_FFT import FFT
+from freqtag_FFT import freqtag_FFT
+from freqtag_FFT3D import freqtag_FFT3D
+
 
 SAMPLE_RATE = 500
 
@@ -23,7 +25,10 @@ def main():
 
     # 4-Run a Discrete Fourier Transform on the data
     mean_ssvep = np.mean(data_ssvep, 2)
-    amp, phase, freqs, fftcomp = FFT(mean_ssvep, SAMPLE_RATE)
+    amp, phase, freqs, fftcomp = freqtag_FFT(mean_ssvep, SAMPLE_RATE)
+
+    # 7-Run FFT on single-trials
+    amp, freqs, fftcomp = freqtag_FFT3D(data_ssvep, 500)
 
 
 if __name__ == "__main__":
