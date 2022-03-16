@@ -8,21 +8,21 @@ def freqtag_FFT(data: np.array, fsamp: float) -> List[np.array]:
 
     Args:
       data:
-        (m, n) array. Each row is the time series of a sensor.
-        There are m sensors and n time points.
+        (m electrodes, n time points) array.
+        Contains time series of each electrode.
       fsamp:
         Sampling rate in Hz.
 
     Returns:
       A list containing 4 arrays in the following order:
-        (m, n/2) array:
-          Each row is the amplitude spectrum of a sensor.
-        (m, n/2) array:
-          Each row is the phase spectrum of a sensor.
-        (n/2) array:
+        (m electrodes, n/2 bins) array:
+          Amplitude spectrum of each electrode.
+        (m electrodes, n/2 bins) array:
+          Phase spectrum of each electrode.
+        (n/2 bins) array:
           Available frequencies in the data.
-        (m, n) array:
-          Each row is the complex Fourier components of a sensor.
+        (m electrodes, n bins) array:
+          Complex Fourier spectrum of each electrode.
     """
     # TODO: Raise an error if invalid input is passed.
 
