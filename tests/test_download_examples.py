@@ -2,6 +2,7 @@ from pathlib import Path
 from freqtag.download_examples import FILES_TO_DOWNLOAD, download
 import pytest
 
+
 @pytest.mark.skip(reason="Test is lengthy and right now we know this works.")
 def test_download():
     """
