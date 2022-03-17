@@ -1,4 +1,4 @@
-from freqtag.freqtag_FFT import FFT
+from freqtag.freqtag_FFT import freqtag_FFT
 from freqtag.download_examples import download
 import pytest
 import scipy.io
@@ -11,13 +11,13 @@ def exampledata_1_results():
     exampledata_1 = scipy.io.loadmat("raw/exampledata_1.mat")["data_1"]
     data_ssvep = exampledata_1[:, 700:3700, :]
     mean_ssvep = numpy.mean(data_ssvep, 2)
-    return FFT(mean_ssvep, 500)
+    return freqtag_FFT(mean_ssvep, 500)
 
 
 # NORMAL CASES
 # The function outputs a 4xN array.
 def test_output_shape(exampledata_1_results):
-    assert exampledata_1_results.shape[0] == 4
+    assert len(exampledata_1_results) == 4
 
 # The first column contains correct amplitudes.
 # The 2nd column contains correct phase spectrum.
