@@ -19,6 +19,7 @@ def exampledata_1_results():
 def test_output_shape(exampledata_1_results):
     assert len(exampledata_1_results) == 4
 
+
 # The first column contains correct amplitudes.
 # The 2nd column contains correct phase spectrum.
 # The 3rd column contains correct frequencies available in the spectrum.
