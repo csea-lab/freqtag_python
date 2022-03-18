@@ -35,7 +35,7 @@ def freqtag_FFT(data: np.ndarray, fsamp: float | int) -> list[np.ndarray]:
     # Get amplitude, taking care of doubled DC or Nyquist frequencies.
     untrimmed_amp = np.abs(fftcomp)
     untrimmed_amp[:, 0] = untrimmed_amp[:, 0] / 2
-    if num_points % 2 == 0:  # TODO: Check Nyquist frequency is corrected.
+    if num_points % 2 == 0:  # TODO: Check odd num_points handled correctly.
         untrimmed_amp[:, midpoint] = untrimmed_amp[:, midpoint] / 2
     untrimmed_amp = untrimmed_amp / num_points
 
