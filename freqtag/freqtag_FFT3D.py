@@ -25,6 +25,8 @@ def freqtag_FFT3D(dataset: np.ndarray, fsamp: float | int) -> List[np.ndarray]:
         (m electrodes, n/2 bins, k trials) array:
           Complex Fourier spectrum of each electrode for each trial.
     """
+    # TODO: Raise errors on invalid input.
+
     num_points = dataset.shape[1]
     midpoint = round(num_points / 2)
     untrimmed_freqs = np.fft.fftfreq(num_points, d=1 / fsamp)
@@ -33,7 +35,7 @@ def freqtag_FFT3D(dataset: np.ndarray, fsamp: float | int) -> List[np.ndarray]:
     # Mean amplitudes over trials.
     untrimmed_amp = np.abs(untrimmed_fftcomp)
     untrimmed_amp[:, 0, :] = untrimmed_amp[:, 0, :] / 2
-    if num_points % 2 == 0:
+    if num_points % 2 == 0:  # TODO: Check odd num_points is handled correctly.
         untrimmed_amp[:, midpoint, :] = untrimmed_amp[:, midpoint, :] / 2
     untrimmed_amp = untrimmed_amp / num_points
     untrimmed_amp = np.mean(untrimmed_amp, axis=2)
