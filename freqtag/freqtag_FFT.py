@@ -8,12 +8,12 @@ def freqtag_FFT(data: np.ndarray, fsamp: float | int) -> list[np.ndarray]:
     Args:
       data:
         (m electrodes, n time points) array.
-        Contains time series of each electrode.
+        Time series of each electrode.
       fsamp:
         Sampling rate in Hz.
 
     Returns:
-      A list containing 4 arrays in the following order:
+      List containing 4 arrays in the following order:
         (m electrodes, n/2 bins) array:
           Amplitude spectrum of each electrode.
         (m electrodes, n/2 bins) array:
