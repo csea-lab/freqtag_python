@@ -1,8 +1,7 @@
 import numpy as np
-from typing import List
 
 
-def freqtag_FFT(data: np.ndarray, fsamp: float | int) -> List[np.ndarray]:
+def freqtag_FFT(data: np.ndarray, fsamp: float | int) -> list[np.ndarray]:
     """
     Applies the Discrete Fourier Transform on a 2D array of EEG data.
 
