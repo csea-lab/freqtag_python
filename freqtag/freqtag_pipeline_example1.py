@@ -28,7 +28,7 @@ def main():
     amp, phase, freqs, fftcomp = freqtag_FFT(mean_ssvep, SAMPLE_RATE)
 
     # 7-Run FFT on single-trials
-    amp, freqs, fftcomp = freqtag_FFT3D(data_ssvep, 500)
+    amp_st, freqs_st, fftcomp_st = freqtag_FFT3D(data_ssvep, 500)
 
 
 if __name__ == "__main__":
