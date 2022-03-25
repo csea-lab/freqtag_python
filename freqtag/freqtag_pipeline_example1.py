@@ -8,6 +8,7 @@ import scipy.io
 import download_examples
 from freqtag_FFT import freqtag_FFT
 from freqtag_FFT3D import freqtag_FFT3D
+from freqtag_HILB import freqtag_HILB
 
 
 SAMPLE_RATE = 500
@@ -28,7 +29,12 @@ def main():
     amp, phase, freqs, fftcomp = freqtag_FFT(mean_ssvep, SAMPLE_RATE)
 
     # 7-Run FFT on single-trials
-    amp_st, freqs_st, fftcomp_st = freqtag_FFT3D(data_ssvep, 500)
+    amp_st, freqs_st, fftcomp_st = freqtag_FFT3D(data_ssvep, SAMPLE_RATE)
+
+    # 9-Run Hilbert Transform
+    mean_exampledata_1 = np.mean(exampledata_1, axis=2)
+    amp5, phase5, complex5 = freqtag_HILB(mean_exampledata_1, 5, 10, SAMPLE_RATE)
+    amp6, phase6, complex6 = freqtag_HILB(mean_exampledata_1, 6, 10, SAMPLE_RATE)
 
 
 if __name__ == "__main__":
