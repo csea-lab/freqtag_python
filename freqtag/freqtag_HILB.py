@@ -24,14 +24,14 @@ def freqtag_HILB(
 
     Args:
       data:
-        (m electrodes, n time points) array.
-        Time series of each electrode.
+        (m sensors, n time points) array.
+        Time series of each sensor.
       taggingfreq:
         Tagging frequency.
       filterorder:
         Order of the filter to be applied on the data.
       sensor2plot:
-        Electrode to be plotted with the phase shifted time series.
+        Sensor to be plotted with the phase shifted time series.
       plotflag:
         The option to plot or not plot the above information.
       fsamp:
@@ -39,11 +39,11 @@ def freqtag_HILB(
 
     Returns:
       List containing 3 arrays in the following order:
-        (m electrodes, n time points) array.
+        (m sensors, n time points) array.
             Amplitude over time (real part of complex number)
-        (m electrodes, n time points) array.
+        (m sensors, n time points) array.
             Phase over time.
-        (m electrodes, n time points) array.
+        (m sensors, n time points) array.
             Imaginary part of complex number.
     """
     # TODO: Input validation.

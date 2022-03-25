@@ -10,19 +10,19 @@ def freqtag_FFT3D(dataset: np.ndarray, fsamp: float | int) -> list[np.ndarray]:
 
     Args:
       dataset:
-        (m electrodes, n time points, k trials) array.
-        Contains time series of each electrode for each trial.
+        (m sensors, n time points, k trials) array.
+        Contains time series of each sensor for each trial.
       fsamp:
         Sampling rate in Hz.
 
     Returns:
       List containing 3 arrays in the following order:
-        (m electrodes, n/2 bins) array:
-          Amplitude spectrum of each electrode.
+        (m sensors, n/2 bins) array:
+          Amplitude spectrum of each sensor.
         (n/2 bins) array:
           Available frequencies in the data.
-        (m electrodes, n/2 bins, k trials) array:
-          Complex Fourier spectrum of each electrode for each trial.
+        (m sensors, n/2 bins, k trials) array:
+          Complex Fourier spectrum of each sensor for each trial.
     """
     # TODO: Raise errors on invalid input.
 
