@@ -19,6 +19,8 @@ def main():
     download_examples.download()
     exampledata_1 = scipy.io.loadmat("raw/exampledata_1.mat")["data_1"]
 
+    # TODO: 2-Plot the data, averaging the trials
+
     # 3-Define frequency axis and prepare spectral analysis, see section 3.1
     data_ssvep = exampledata_1[:, 700:3700, :]
     faxisall = np.arange(0, 250, 0.1667)
@@ -28,8 +30,12 @@ def main():
     mean_ssvep = np.mean(data_ssvep, 2)
     amp, phase, freqs, fftcomp = freqtag_FFT(mean_ssvep, SAMPLE_RATE)
 
+    # TODO: 6-Plot the FFT results
+
     # 7-Run FFT on single-trials
     amp_st, freqs_st, fftcomp_st = freqtag_FFT3D(data_ssvep, SAMPLE_RATE)
+
+    # TODO: 8-Plot the FFT on single trials results
 
     # 9-Run Hilbert Transform
     mean_exampledata_1 = np.mean(exampledata_1, axis=2)
@@ -39,6 +45,8 @@ def main():
     amp6, phase6, complex6 = freqtag_HILB(
         mean_exampledata_1, 6, 10, 75, True, SAMPLE_RATE
     )
+
+    # TODO: 10-Plot the Hilbert Transform results
 
 
 if __name__ == "__main__":
