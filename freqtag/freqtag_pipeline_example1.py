@@ -1,7 +1,8 @@
 """
 The freqtag pipeline: A principled approach to analyzing electrophysiological
-time series in frequency tagging paradigms. Part 1: Measuring the time-varying
-ssVEP envelope at each tagging frequency.
+time series in frequency tagging paradigms.
+
+Part 1: Measuring the time-varying ssVEP envelope at each tagging frequency.
 """
 import numpy as np
 import scipy.io
