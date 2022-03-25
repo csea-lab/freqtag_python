@@ -33,8 +33,12 @@ def main():
 
     # 9-Run Hilbert Transform
     mean_exampledata_1 = np.mean(exampledata_1, axis=2)
-    amp5, phase5, complex5 = freqtag_HILB(mean_exampledata_1, 5, 10, SAMPLE_RATE)
-    amp6, phase6, complex6 = freqtag_HILB(mean_exampledata_1, 6, 10, SAMPLE_RATE)
+    amp5, phase5, complex5 = freqtag_HILB(
+        mean_exampledata_1, 5, 10, 75, True, SAMPLE_RATE
+    )
+    amp6, phase6, complex6 = freqtag_HILB(
+        mean_exampledata_1, 6, 10, 75, True, SAMPLE_RATE
+    )
 
 
 if __name__ == "__main__":
