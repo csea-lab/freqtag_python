@@ -8,6 +8,7 @@ import download_examples
 import scipy.io
 import numpy as np
 from freqtag_FFT import freqtag_FFT
+from freqtag_FFT3D import freqtag_FFT3D
 
 
 SAMPLE_RATE = 500
@@ -21,6 +22,10 @@ def main():
     # 2-Data visualization and check in the frequency domain
     mean_exampledata = np.mean(exampledata_2, 2)
     amp, phase, freqs, fftcomp = freqtag_FFT(mean_exampledata, SAMPLE_RATE)
+    # TODO: Add plots for this section.
+
+    # 3-Run FFT on single-trials and plot the results
+    amp_st, freqs_st, fftcomp_st = freqtag_FFT3D(exampledata_2, SAMPLE_RATE)
     # TODO: Add plots for this section.
 
 
