@@ -4,9 +4,9 @@ from sklearn.linear_model import LinearRegression
 
 def freqtag_regressionMAT(InMat: np.ndarray) -> np.ndarray:
     """
-    Computes linear regression and subtracts regression from input array.
+    Computes and subtracts a linear regression for each sensor's time series.
 
-    The point of this is to detrend the timeseries.
+    This removes any linear trend in the data.
 
     Args:
       InMat:
@@ -15,7 +15,7 @@ def freqtag_regressionMAT(InMat: np.ndarray) -> np.ndarray:
 
     Returns:
       (n sensors, m points) array.
-        Data with the regression subtracted.
+        Data with each electrode's regression subtracted.
     """
     # TODO: Validate input.
 
