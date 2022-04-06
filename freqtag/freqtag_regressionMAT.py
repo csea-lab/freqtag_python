@@ -5,14 +5,16 @@ def freqtag_regressionMAT(InMat: np.ndarray) -> np.ndarray:
     """
     Computes linear regression and subtracts regression from input array.
 
+    The point of this is to detrend the timeseries.
+
     Args:
       InMat:
         (n sensors, m points) array.
-        Data.
+        EEG data.
 
     Returns:
       (n sensors, m points) array.
-      Data with the regression subtracted.
+        Data with the regression subtracted.
     """
     # TODO: Validate input.
 
