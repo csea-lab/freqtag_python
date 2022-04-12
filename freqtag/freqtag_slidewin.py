@@ -40,7 +40,7 @@ def freqtag_slidewin(
       List containing arrays in the following order:
         (m sensors, k trials) array.
           ssVEP amplitude at the frequency of interest for each trial.
-        (m sensors, TODO averages, k trials) array.
+        (m sensors, averages, k trials) array.
           Sliding window averages for each trial in the time domain.
           Number of averages is equal to the number of shiftcycles.
         (m sensors, k trials) array.
@@ -126,8 +126,7 @@ def freqtag_slidewin(
         phasestabmat[:, trial] = np.abs(fouriersum / (winshiftstep + 1))
         winmat3d[:, :, trial] = winmat
 
-    result = trialamp, winmat3d, phasestabmat, trialSNR
-    return result
+    return trialamp, winmat3d, phasestabmat, trialSNR
 
 
 def _get_trialSNR(Mag: np.ndarray, targetbin: int) -> np.ndarray:
