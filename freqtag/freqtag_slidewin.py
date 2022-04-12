@@ -69,8 +69,9 @@ def freqtag_slidewin(
     min_diff_vec = np.abs(freqbins - foi)
     targetbin = np.flatnonzero(min_diff_vec == np.min(min_diff_vec))
 
-    empty_trial_array = np.empty([NSensors, NTrials])
-    trialamp, trialSNR, phasestabmat = [empty_trial_array] * 3
+    trialamp = np.empty([NSensors, NTrials])
+    trialSNR = np.empty([NSensors, NTrials])
+    phasestabmat = np.empty([NSensors, NTrials])
 
     winmat3d = np.empty([NSensors, shiftcycle, NTrials])
 
@@ -91,9 +92,9 @@ def freqtag_slidewin(
 
         winmatsum = np.zeros((datamat.shape[0], shiftcycle))
 
-        for winshiftstep in range(1, len(winshiftvec) + 1):
+        for winshiftstep in range(len(winshiftvec)):
 
-            win_start = winshiftvec[winshiftstep - 1] - 1
+            win_start = winshiftvec[winshiftstep] - 1
             win_end = win_start + shiftcycle
             index = np.arange(win_start, win_end)
             regression_input = datamat[:, tuple(index)]
@@ -122,11 +123,9 @@ def freqtag_slidewin(
         trialamp[:, trial] = Mag.T[targetbin]
         trialSNR[:, trial] = _get_trialSNR(Mag, targetbin)
 
-        phasestabmat[:, trial] = np.abs(fouriersum / winshiftstep)
+        phasestabmat[:, trial] = np.abs(fouriersum / (winshiftstep + 1))
         winmat3d[:, :, trial] = winmat
 
-    # FIXME: Make trialamp correct.
-    # FIXME: Make trialSNR correct.
     result = trialamp, winmat3d, phasestabmat, trialSNR
     return result
 
