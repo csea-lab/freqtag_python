@@ -101,9 +101,6 @@ def freqtag_slidewin(
             regressed_mat = freqtag_regressionMAT(regression_input)
             winmatsum += regressed_mat
 
-            # XXX: Check first bin being different from MATLAB doesn't break anything.
-            # Looks like the first bin is never accessed elsewhere in the code,
-            # so it's probably OK.
             fouriermat = np.fft.fft(regressed_mat, axis=1)
 
             fouriercomp = fouriermat[:, targetbin].squeeze()
