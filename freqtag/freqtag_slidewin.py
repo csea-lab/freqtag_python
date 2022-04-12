@@ -42,6 +42,7 @@ def freqtag_slidewin(
           ssVEP amplitude at the frequency of interest for each trial.
         (m sensors, TODO averages, k trials) array.
           Sliding window averages for each trial in the time domain.
+          Number of averages is equal to the number of shiftcycles.
         (m sensors, k trials) array.
           Phase stability average of complex coefficients across moving windows.
         (m sensors, k trials) array.
