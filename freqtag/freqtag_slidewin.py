@@ -49,6 +49,7 @@ def freqtag_slidewin(
           for each trial.
     """
     # TODO: Input validation.
+    # TODO: Modularize this function more.
 
     NTrials = data.shape[-1]
     NSensors = data.shape[0]
@@ -77,6 +78,7 @@ def freqtag_slidewin(
 
     print("Trial index:")
 
+    # TODO: Speed this loop up.
     for trial in range(NTrials):
 
         Data = data[:, ssvepvec, trial]
