@@ -23,28 +23,28 @@ def freqtag_HILB(
     (hilbert) part in red, and absolute value (envelope) in black.
 
     Args:
-      data:
-        (m sensors, n time points) array.
-        Time series of each sensor.
-      taggingfreq:
-        Tagging frequency.
-      filterorder:
-        Order of the filter to be applied on the data.
-      sensor2plot:
-        Sensor to be plotted with the phase shifted time series.
-      plotflag:
-        The option to plot or not plot the above information.
-      fsamp:
-        Sampling rate.
+        data:
+            (m sensors, n time points) array.
+            Time series of each sensor.
+        taggingfreq:
+            Tagging frequency.
+        filterorder:
+            Order of the filter to be applied on the data.
+        sensor2plot:
+            Sensor to be plotted with the phase shifted time series.
+        plotflag:
+            The option to plot or not plot the above information.
+        fsamp:
+            Sampling rate.
 
     Returns:
-      List containing 3 arrays in the following order:
-        (m sensors, n time points) array.
-            Amplitude over time (real part of complex number)
-        (m sensors, n time points) array.
-            Phase over time.
-        (m sensors, n time points) array.
-            Imaginary part of complex number.
+        List containing 3 arrays in the following order:
+            (m sensors, n time points) array.
+                Amplitude over time (real part of complex number)
+            (m sensors, n time points) array.
+                Phase over time.
+            (m sensors, n time points) array.
+                Imaginary part of complex number.
     """
     # TODO: Input validation.
 

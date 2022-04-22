@@ -9,13 +9,13 @@ def freqtag_regressionMAT(InMat: np.ndarray) -> np.ndarray:
     This removes any linear trend in the data.
 
     Args:
-      InMat:
-        (n sensors, m points) array.
-        EEG data.
+        InMat:
+            (n sensors, m points) array.
+            EEG data.
 
     Returns:
-      (n sensors, m points) array.
-        Data with each electrode's regression subtracted.
+        (n sensors, m points) array.
+            Data with each electrode's regression subtracted.
     """
     # TODO: Validate input.
 
