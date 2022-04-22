@@ -20,34 +20,34 @@ def freqtag_slidewin(
     Described in Morgan et al. 1996; Wieser % et al., 2016.
 
     Args:
-      data:
-        (m sensors, n time points, k trials) array.
-        Time series of each sensor.
-      bslvec:
-        (p sample points) array.
-        Sample points to be used for baseline subtraction.
-      ssvepvec:
-        (j sample points) array.
-        Sample points to be used in sliding window analysis.
-      foi:
-        Driving frequency of interest in Hz.
-      sampnew:
-        New sample rate (if needed).
-      fsamp:
-        Sampling rate.
+        data:
+            (m sensors, n time points, k trials) array.
+            Time series of each sensor.
+        bslvec:
+            (p sample points) array.
+            Sample points to be used for baseline subtraction.
+        ssvepvec:
+            (j sample points) array.
+            Sample points to be used in sliding window analysis.
+        foi:
+            Driving frequency of interest in Hz.
+        sampnew:
+            New sample rate (if needed).
+        fsamp:
+            Sampling rate.
 
     Returns:
-      List containing arrays in the following order:
-        (m sensors, k trials) array.
-          ssVEP amplitude at the frequency of interest for each trial.
-        (m sensors, averages, k trials) array.
-          Sliding window averages for each trial in the time domain.
-          Number of averages is equal to the number of shiftcycles.
-        (m sensors, k trials) array.
-          Phase stability average of complex coefficients across moving windows.
-        (m sensors, k trials) array.
-          ssVEP signal-to-noise ratio in decibels at frequency of interest
-          for each trial.
+        List containing arrays in the following order:
+            (m sensors, k trials) array.
+                ssVEP amplitude at the frequency of interest for each trial.
+            (m sensors, averages, k trials) array.
+                Sliding window averages for each trial in the time domain.
+                Number of averages is equal to the number of shiftcycles.
+            (m sensors, k trials) array.
+                Phase stability average of complex coefficients across moving windows.
+            (m sensors, k trials) array.
+                ssVEP signal-to-noise ratio in decibels at frequency of interest
+                for each trial.
     """
     # TODO: Input validation.
     # TODO: Modularize this function more.
