@@ -1,6 +1,3 @@
-flake8
-black
-pytest
 numpy
 scipy
 matplotlib
